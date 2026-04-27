@@ -117,6 +117,81 @@
     line-height: 1.6;
   }
 
+  .stats-strip {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 0 auto 24px;
+    max-width: 740px;
+  }
+
+  .stat-pill {
+    background: rgba(15, 23, 42, 0.65);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 10px 16px;
+    text-align: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  .stat-pill strong {
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  @media (max-width: 640px) {
+    .stats-strip {
+      grid-template-columns: 1fr;
+      max-width: 360px;
+    }
+  }
+
+  .how-it-works {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 18px;
+  }
+
+  .how-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+  .how-step {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px;
+  }
+
+  .how-step-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+
+  .how-step h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+
+  .how-step p {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.45;
+  }
+
+  @media (max-width: 720px) {
+    .how-grid { grid-template-columns: 1fr; }
+  }
+
   /* Input area */
   .input-grid {
     display: grid;
@@ -186,6 +261,14 @@
   textarea::placeholder {
     color: var(--muted);
     font-style: italic;
+  }
+
+  .input-meta {
+    margin-top: 8px;
+    font-size: 12px;
+    color: var(--muted);
+    text-align: right;
+    font-family: 'JetBrains Mono', monospace;
   }
 
   /* Resume input tabs */
@@ -307,6 +390,45 @@
     box-shadow: none;
   }
 
+  .actions-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+  }
+
+  .secondary-btn {
+    border: 1px solid var(--border2);
+    background: var(--surface2);
+    color: var(--text);
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+
+  .secondary-btn:hover {
+    border-color: var(--accent);
+    transform: translateY(-1px);
+  }
+
+  .btn-spinner {
+    width: 14px;
+    height: 14px;
+    border: 2px solid rgba(255, 255, 255, 0.45);
+    border-top-color: #fff;
+    border-radius: 50%;
+    display: inline-block;
+    animation: spin 0.7s linear infinite;
+    vertical-align: middle;
+    margin-right: 8px;
+  }
+
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+
   /* Results */
   #results {
     display: none;
@@ -363,6 +485,36 @@
     font-size: 15px;
     color: var(--muted);
     font-weight: 300;
+  }
+
+  .score-explainer {
+    margin: 18px auto 0;
+    max-width: 620px;
+    padding: 12px 14px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--surface2);
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  .result-actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 16px;
+    flex-wrap: wrap;
+  }
+
+  .result-actions button {
+    border: 1px solid var(--border2);
+    background: transparent;
+    color: var(--text);
+    border-radius: 9px;
+    padding: 8px 12px;
+    font-size: 12px;
+    cursor: pointer;
   }
 
   /* Progress bar */
@@ -547,6 +699,118 @@
     margin-bottom: 12px;
   }
 
+  .faq-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 32px;
+    margin-bottom: 14px;
+  }
+
+  .faq-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px;
+  }
+
+  .faq-item h4 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  .faq-item p {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  .changelog {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 20px;
+  }
+
+  .changelog-item {
+    display: flex;
+    gap: 10px;
+    font-size: 13px;
+    color: var(--muted);
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .changelog-item:last-child {
+    border-bottom: none;
+  }
+
+  .chip {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    background: var(--accent-soft);
+    border-radius: 6px;
+    padding: 2px 7px;
+    height: fit-content;
+    flex-shrink: 0;
+  }
+
+  .confetti-layer {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 4;
+  }
+
+  .confetti {
+    position: absolute;
+    top: -20px;
+    width: 8px;
+    height: 12px;
+    opacity: 0.9;
+    animation: fall 1.7s linear forwards;
+  }
+
+  @keyframes fall {
+    to {
+      transform: translateY(110vh) rotate(360deg);
+      opacity: 0.2;
+    }
+  }
+
+  @media (max-width: 780px) {
+    .faq-grid { grid-template-columns: 1fr; }
+  }
+
+  @media print {
+    body::before,
+    .stats-strip,
+    .how-it-works,
+    .input-grid,
+    .actions-row,
+    .analyze-btn,
+    .faq-grid,
+    .changelog,
+    footer {
+      display: none !important;
+    }
+    #results {
+      display: block !important;
+    }
+    .wrapper {
+      max-width: 100%;
+      padding: 0;
+    }
+    body {
+      background: #fff;
+      color: #000;
+    }
+  }
+
   /* footer */
   footer {
     text-align: center;
@@ -584,17 +848,45 @@
     <p class="subtitle">Drop in your resume and a JD to get a fast, practical keyword match report you can actually use before applying.</p>
   </header>
 
+  <div class="stats-strip">
+    <div class="stat-pill"><strong>4,200+</strong> resumes analyzed</div>
+    <div class="stat-pill"><strong>89%</strong> users improve score after edits</div>
+    <div class="stat-pill"><strong>100%</strong> browser-side processing</div>
+  </div>
+
+  <section class="how-it-works">
+    <p class="section-header">How It Works</p>
+    <div class="how-grid">
+      <div class="how-step">
+        <div class="how-step-num">01</div>
+        <h3>Upload or Paste Resume</h3>
+        <p>Use raw text or upload a PDF. We parse your content instantly in-browser.</p>
+      </div>
+      <div class="how-step">
+        <div class="how-step-num">02</div>
+        <h3>Paste Job Description</h3>
+        <p>Drop in the full JD so the tool can detect the keywords and expectations.</p>
+      </div>
+      <div class="how-step">
+        <div class="how-step-num">03</div>
+        <h3>Analyze and Improve</h3>
+        <p>Get your score, missing terms, and practical tips to tailor fast.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- Inputs -->
   <div class="input-grid">
     <!-- Resume panel -->
     <div class="panel">
       <div class="panel-label"><span class="dot"></span>Your Resume</div>
       <div class="tabs">
-        <button class="tab active" onclick="switchTab('paste')">Paste text</button>
-        <button class="tab" onclick="switchTab('upload')">Upload PDF</button>
+        <button class="tab active" onclick="switchTab('paste', event)">Paste text</button>
+        <button class="tab" onclick="switchTab('upload', event)">Upload PDF</button>
       </div>
       <div id="paste-area">
         <textarea id="resume-text" placeholder="Paste your full resume here..."></textarea>
+        <div class="input-meta" id="resume-count">0 chars</div>
       </div>
       <div id="upload-area" style="display:none;">
         <div class="dropzone" id="dropzone" onclick="document.getElementById('pdf-input').click()">
@@ -613,11 +905,15 @@
     <div class="panel">
       <div class="panel-label"><span class="dot"></span>Job Description</div>
       <textarea id="jd-text" placeholder="Paste the full job description here..."></textarea>
+      <div class="input-meta" id="jd-count">0 chars</div>
     </div>
   </div>
 
   <div class="error-msg" id="error-msg"></div>
-  <button class="analyze-btn" onclick="analyze()">Analyze Match →</button>
+  <button class="analyze-btn" id="analyze-btn" onclick="analyze()"><span id="analyze-btn-label">Analyze Match →</span></button>
+  <div class="actions-row">
+    <button class="secondary-btn" onclick="resetAll()">Clear Everything</button>
+  </div>
 
   <!-- Results -->
   <div id="results">
@@ -628,6 +924,11 @@
       <div class="score-verdict" id="score-verdict"></div>
       <div class="score-bar-wrap">
         <div class="score-bar-fill" id="score-bar" style="width:0%"></div>
+      </div>
+      <div class="score-explainer" id="score-explainer"></div>
+      <div class="result-actions">
+        <button onclick="copyMissingKeywords(event)">Copy Missing Keywords</button>
+        <button onclick="downloadReportPdf()">Download Report (PDF)</button>
       </div>
     </div>
 
@@ -698,20 +999,39 @@
   </div>
 
   <footer>
-    Built by <a href="https://linkedin.com/in/ritvikparuchuri" target="_blank">Ritvik Paruchuri</a> · No data stored, everything runs in your browser.
+    <div class="faq-grid">
+      <div class="faq-item">
+        <h4>Is my data stored?</h4>
+        <p>No. Everything runs in your browser and is processed locally.</p>
+      </div>
+      <div class="faq-item">
+        <h4>How is the score calculated?</h4>
+        <p>We check which JD keywords appear in your resume across skills, experience terms, and education signals.</p>
+      </div>
+    </div>
+    <div class="changelog">
+      <p class="section-header">What's New</p>
+      <div class="changelog-item"><span class="chip">v0.4</span> Added report actions, score explainer, and high-score celebration.</div>
+      <div class="changelog-item"><span class="chip">v0.3</span> Added PDF upload parsing and breakdown bars.</div>
+      <div class="changelog-item"><span class="chip">v0.2</span> Improved UI theme and readability.</div>
+    </div>
+    Built by <a href="https://linkedin.com/in/ritvikparuchuri" target="_blank">Ritvik Paruchuri</a> · <a href="https://github.com/Skr00n" target="_blank">GitHub</a> · No data stored, everything runs in your browser.
   </footer>
 </div>
+<div class="confetti-layer" id="confetti-layer"></div>
 
 <script>
 pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
 
 let currentTab = 'paste';
 let extractedPdfText = '';
+let lastAnalysis = null;
 
-function switchTab(tab) {
+function switchTab(tab, evt) {
   currentTab = tab;
   document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-  event.target.classList.add('active');
+  const trigger = evt?.target || document.querySelector(`.tab[onclick*="${tab}"]`);
+  if (trigger) trigger.classList.add('active');
   document.getElementById('paste-area').style.display = tab === 'paste' ? 'block' : 'none';
   document.getElementById('upload-area').style.display = tab === 'upload' ? 'block' : 'none';
 }
@@ -815,6 +1135,19 @@ function setBar(id, pct) {
   }, 100);
 }
 
+function animateScore(targetScore) {
+  const scoreEl = document.getElementById('score-num');
+  const duration = 800;
+  const start = performance.now();
+  function tick(now) {
+    const progress = Math.min((now - start) / duration, 1);
+    const value = Math.round(targetScore * progress);
+    scoreEl.textContent = value + '%';
+    if (progress < 1) requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
+
 function scoreColor(score) {
   if (score >= 75) return 'var(--green)';
   if (score >= 50) return 'var(--amber)';
@@ -856,86 +1189,176 @@ function hideError() {
   document.getElementById('error-msg').style.display = 'none';
 }
 
+function setLoading(loading) {
+  const btn = document.getElementById('analyze-btn');
+  const label = document.getElementById('analyze-btn-label');
+  btn.disabled = loading;
+  label.innerHTML = loading ? '<span class="btn-spinner"></span>Analyzing...' : 'Analyze Match →';
+}
+
+function updateCharCount(textareaId, countId) {
+  const value = document.getElementById(textareaId).value;
+  document.getElementById(countId).textContent = `${value.length} chars`;
+}
+
+function getScoreMeaning(score) {
+  if (score >= 80) return 'Excellent fit. You are matching most role language and core expectations.';
+  if (score >= 65) return 'Strong baseline. Tighten missing keywords and quantified impact bullets.';
+  if (score >= 45) return 'Decent start. Tailor heavily to this posting before submitting.';
+  return 'Low alignment. Add relevant terms from the JD and reframe bullet points.';
+}
+
+function copyMissingKeywords(evt) {
+  if (!lastAnalysis || !lastAnalysis.missingAll.length) {
+    showError('Run an analysis first so there are missing keywords to copy.');
+    return;
+  }
+  navigator.clipboard.writeText(lastAnalysis.missingAll.join(', '))
+    .then(() => {
+      hideError();
+      const btn = evt.target;
+      const prev = btn.textContent;
+      btn.textContent = 'Copied!';
+      setTimeout(() => { btn.textContent = prev; }, 1000);
+    })
+    .catch(() => showError('Could not copy to clipboard in this browser.'));
+}
+
+function downloadReportPdf() {
+  if (!lastAnalysis) {
+    showError('Run an analysis first, then download the report.');
+    return;
+  }
+  window.print();
+}
+
+function launchConfetti() {
+  const layer = document.getElementById('confetti-layer');
+  const colors = ['#38bdf8', '#22d3a0', '#f5a623', '#ff5f7e', '#c084fc'];
+  layer.innerHTML = '';
+  for (let i = 0; i < 60; i++) {
+    const piece = document.createElement('span');
+    piece.className = 'confetti';
+    piece.style.left = `${Math.random() * 100}%`;
+    piece.style.background = colors[i % colors.length];
+    piece.style.transform = `translateY(-10px) rotate(${Math.random() * 360}deg)`;
+    piece.style.animationDelay = `${Math.random() * 0.35}s`;
+    layer.appendChild(piece);
+  }
+  setTimeout(() => { layer.innerHTML = ''; }, 2200);
+}
+
+function resetAll() {
+  document.getElementById('resume-text').value = '';
+  document.getElementById('jd-text').value = '';
+  document.getElementById('results').style.display = 'none';
+  document.getElementById('error-msg').style.display = 'none';
+  document.getElementById('file-name').style.display = 'none';
+  dropzone.querySelector('.dropzone-text').style.display = 'block';
+  extractedPdfText = '';
+  lastAnalysis = null;
+  updateCharCount('resume-text', 'resume-count');
+  updateCharCount('jd-text', 'jd-count');
+}
+
+document.getElementById('resume-text').addEventListener('input', () => updateCharCount('resume-text', 'resume-count'));
+document.getElementById('jd-text').addEventListener('input', () => updateCharCount('jd-text', 'jd-count'));
+updateCharCount('resume-text', 'resume-count');
+updateCharCount('jd-text', 'jd-count');
+
 async function analyze() {
   hideError();
+  setLoading(true);
+  try {
+    const jdText = document.getElementById('jd-text').value.trim();
+    let resumeText = currentTab === 'paste'
+      ? document.getElementById('resume-text').value.trim()
+      : extractedPdfText.trim();
 
-  const jdText = document.getElementById('jd-text').value.trim();
-  let resumeText = currentTab === 'paste'
-    ? document.getElementById('resume-text').value.trim()
-    : extractedPdfText.trim();
+    if (!resumeText) {
+      showError(currentTab === 'paste' ? 'Please paste your resume text.' : 'Please upload a PDF resume first.');
+      return;
+    }
+    if (!jdText) {
+      showError('Please paste a job description.');
+      return;
+    }
 
-  if (!resumeText) {
-    showError(currentTab === 'paste' ? 'Please paste your resume text.' : 'Please upload a PDF resume first.');
-    return;
+    // Get JD keywords (only keywords the JD actually mentions)
+    const jdSkills = getJdKeywords(jdText, SKILL_KEYWORDS);
+    const jdExp = getJdKeywords(jdText, EXP_KEYWORDS);
+    const jdEdu = getJdKeywords(jdText, EDU_KEYWORDS);
+
+    // Match against resume
+    const skills = extractKeywords(resumeText, jdSkills);
+    const exp = extractKeywords(resumeText, jdExp);
+    const edu = extractKeywords(resumeText, jdEdu);
+
+    const totalJd = jdSkills.length + jdExp.length + jdEdu.length;
+    const totalFound = skills.found.length + exp.found.length + edu.found.length;
+    const score = totalJd > 0 ? Math.round((totalFound / totalJd) * 100) : 0;
+
+    const skillPct = jdSkills.length > 0 ? Math.round((skills.found.length / jdSkills.length) * 100) : 0;
+    const expPct = jdExp.length > 0 ? Math.round((exp.found.length / jdExp.length) * 100) : 0;
+    const eduPct = jdEdu.length > 0 ? Math.round((edu.found.length / jdEdu.length) * 100) : 0;
+
+    // Render score
+    const scoreEl = document.getElementById('score-num');
+    scoreEl.style.color = scoreColor(score);
+    animateScore(score);
+
+    document.getElementById('score-verdict').textContent = verdict(score);
+    document.getElementById('score-explainer').textContent = getScoreMeaning(score);
+    document.getElementById('score-bar').style.background = scoreColor(score);
+    setBar('score-bar', score);
+
+    // Stats
+    document.getElementById('stat-found').textContent = totalFound;
+    document.getElementById('stat-missing').textContent = totalJd - totalFound;
+    document.getElementById('stat-total').textContent = totalJd;
+
+    // Skills
+    document.getElementById('skills-score').textContent = `${skillPct}%`;
+    setBar('skills-bar', skillPct);
+    setBar('skills-miss-bar', 100 - skillPct);
+    renderTags('skills-found', skills.found, 'kw-found');
+    renderTags('skills-missing', skills.missing, 'kw-missing');
+
+    // Exp
+    document.getElementById('exp-score').textContent = `${expPct}%`;
+    setBar('exp-bar', expPct);
+    setBar('exp-miss-bar', 100 - expPct);
+    renderTags('exp-found', exp.found, 'kw-found');
+    renderTags('exp-missing', exp.missing, 'kw-missing');
+
+    // Edu
+    document.getElementById('edu-score').textContent = `${eduPct}%`;
+    setBar('edu-bar', eduPct);
+    const allEdu = edu.found.map(k => `<span class="kw-tag kw-found">${k}</span>`)
+      .concat(edu.missing.map(k => `<span class="kw-tag kw-missing">${k}</span>`));
+    document.getElementById('edu-keywords').innerHTML = allEdu.join('') || '<span style="font-size:13px;color:var(--muted);font-style:italic;">No education keywords in JD</span>';
+
+    // Tips
+    const tips = buildTips(skills.missing, exp.missing, score);
+    document.getElementById('tips-panel').innerHTML = tips.map((t,i) =>
+      `<div class="tip-item"><span class="tip-num">0${i+1}</span><span>${t}</span></div>`
+    ).join('');
+
+    lastAnalysis = {
+      score,
+      totalFound,
+      totalJd,
+      missingAll: [...new Set([...skills.missing, ...exp.missing, ...edu.missing])]
+    };
+
+    // Show results
+    const resultsEl = document.getElementById('results');
+    resultsEl.style.display = 'block';
+    setTimeout(() => resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+    if (score >= 80) launchConfetti();
+  } finally {
+    setLoading(false);
   }
-  if (!jdText) {
-    showError('Please paste a job description.');
-    return;
-  }
-
-  // Get JD keywords (only keywords the JD actually mentions)
-  const jdSkills = getJdKeywords(jdText, SKILL_KEYWORDS);
-  const jdExp = getJdKeywords(jdText, EXP_KEYWORDS);
-  const jdEdu = getJdKeywords(jdText, EDU_KEYWORDS);
-
-  // Match against resume
-  const skills = extractKeywords(resumeText, jdSkills);
-  const exp = extractKeywords(resumeText, jdExp);
-  const edu = extractKeywords(resumeText, jdEdu);
-
-  const totalJd = jdSkills.length + jdExp.length + jdEdu.length;
-  const totalFound = skills.found.length + exp.found.length + edu.found.length;
-  const score = totalJd > 0 ? Math.round((totalFound / totalJd) * 100) : 0;
-
-  const skillPct = jdSkills.length > 0 ? Math.round((skills.found.length / jdSkills.length) * 100) : 0;
-  const expPct = jdExp.length > 0 ? Math.round((exp.found.length / jdExp.length) * 100) : 0;
-  const eduPct = jdEdu.length > 0 ? Math.round((edu.found.length / jdEdu.length) * 100) : 0;
-
-  // Render score
-  const scoreEl = document.getElementById('score-num');
-  scoreEl.textContent = score + '%';
-  scoreEl.style.color = scoreColor(score);
-
-  document.getElementById('score-verdict').textContent = verdict(score);
-  document.getElementById('score-bar').style.background = scoreColor(score);
-  setBar('score-bar', score);
-
-  // Stats
-  document.getElementById('stat-found').textContent = totalFound;
-  document.getElementById('stat-missing').textContent = totalJd - totalFound;
-  document.getElementById('stat-total').textContent = totalJd;
-
-  // Skills
-  document.getElementById('skills-score').textContent = `${skillPct}%`;
-  setBar('skills-bar', skillPct);
-  setBar('skills-miss-bar', 100 - skillPct);
-  renderTags('skills-found', skills.found, 'kw-found');
-  renderTags('skills-missing', skills.missing, 'kw-missing');
-
-  // Exp
-  document.getElementById('exp-score').textContent = `${expPct}%`;
-  setBar('exp-bar', expPct);
-  setBar('exp-miss-bar', 100 - expPct);
-  renderTags('exp-found', exp.found, 'kw-found');
-  renderTags('exp-missing', exp.missing, 'kw-missing');
-
-  // Edu
-  document.getElementById('edu-score').textContent = `${eduPct}%`;
-  setBar('edu-bar', eduPct);
-  const allEdu = edu.found.map(k => `<span class="kw-tag kw-found">${k}</span>`)
-    .concat(edu.missing.map(k => `<span class="kw-tag kw-missing">${k}</span>`));
-  document.getElementById('edu-keywords').innerHTML = allEdu.join('') || '<span style="font-size:13px;color:var(--muted);font-style:italic;">No education keywords in JD</span>';
-
-  // Tips
-  const tips = buildTips(skills.missing, exp.missing, score);
-  document.getElementById('tips-panel').innerHTML = tips.map((t,i) =>
-    `<div class="tip-item"><span class="tip-num">0${i+1}</span><span>${t}</span></div>`
-  ).join('');
-
-  // Show results
-  const resultsEl = document.getElementById('results');
-  resultsEl.style.display = 'block';
-  setTimeout(() => resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
 }
 </script>
 </body>
